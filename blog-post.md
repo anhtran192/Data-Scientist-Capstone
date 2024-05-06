@@ -1,4 +1,5 @@
 Understanding User Churn with Sparkify
+
 ![image](https://github.com/anhtran192/Data-Scientist-Capstone/assets/147739264/1aa3b742-46f8-4349-87fe-81491d999848)
 
 In the realm of subscription-based services, understanding user churn is paramount. It not only helps businesses retain customers but also provides insights into improving overall user experience. In this blog post, we embark on a data analysis journey with Sparkify, a fictional music streaming service, to uncover patterns of user churn using Apache Spark.
