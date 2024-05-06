@@ -28,8 +28,7 @@ Sparkify.ipynb: Jupyter Notebook containing the code for data analysis, feature 
 
 README.md: This file, providing an overview of the project and instructions for getting started.
 
-blog-post.md: This file, providing how we can leverage the Sparkify dataset, a fictional music streaming service, to analyze user behavior 
-and predict churn using Apache Spark.
+blog-post.md: This file, providing how we can leverage the Sparkify dataset to analyze user behavior and predict churn using Apache Spark.
 
 To run the code in Sparkify.ipynb, you need to set up a Spark cluster environment. If you're using this workspace, Spark is already configured.
 
