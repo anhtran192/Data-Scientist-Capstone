@@ -16,13 +16,11 @@ Given the imbalanced nature of churned versus non-churned users, we use the F1 s
 
 **Data Exploration and Cleaning**
 
-Load and Clean Dataset
-We start with a mini-dataset (mini_sparkify_event_data.json) and perform data cleaning to ensure its integrity. This involves:
-
+Load and Clean Dataset: We start with a mini-dataset (mini_sparkify_event_data.json) and perform data cleaning to ensure its integrity. This involves:
 Removing records with missing user IDs or session IDs.
 Handling null values and correcting data types.
-Exploratory Data Analysis
-We conduct an exploratory data analysis (EDA) to gain insights into user behavior. Key observations include:
+
+Exploratory Data Analysis: We conduct an exploratory data analysis (EDA) to gain insights into user behavior. Key observations include:
 
 Distribution of events such as song plays, likes, and skips.
 User activity patterns over time.
@@ -31,13 +29,12 @@ User activity patterns over time.
 
 Churn is defined based on the "Cancellation Confirmation" event. Users who trigger this event are labeled as churned. As an additional task, we consider "Downgrade" events to understand potential indicators of churn.
 
-Data Exploration Post-Churn Definition
-After labeling churn, we further explore the dataset to compare behaviors between churned and non-churned users:
+Data Exploration Post-Churn Definition: After labeling churn, we further explore the dataset to compare behaviors between churned and non-churned users:
 
 Average number of songs played per session.
 Interaction with different features like liking a song or adding to a playlist.
-Feature Engineering
-We identify and engineer several features that are indicative of user churn. These features include:
+
+Feature Engineering: We identify and engineer several features that are indicative of user churn. These features include:
 
 Number of songs played.
 Frequency of different events (e.g., thumbs up, thumbs down, add to playlist).
@@ -47,15 +44,21 @@ Time since last session.
 **Modeling**
 
 Data Splitting
+
 The data is split into training, validation, and test sets to ensure robust model evaluation.
 
 Model Evaluation
+
 We evaluate several machine learning models, including Logistic Regression, Decision Tree Classifier, and Random Forest Classifier. The performance is measured using the F1 score:
 
 Logistic Regression: F1 Score = 0.767
+
 Decision Tree Classifier: F1 Score = 0.791
+
 Random Forest Classifier: F1 Score = 0.778
+
 Best Model: Decision Tree Classifier
+
 The Decision Tree Classifier outperforms other models due to its ability to capture complex relationships, interpretability, and effective feature selection. Key reasons for its superior performance include:
 
 Model Complexity: Captures intricate patterns in the data.
@@ -67,11 +70,9 @@ The Decision Tree Classifier achieves the highest F1 score of 0.791, making it t
 
 **Conclusion**
 
-Reflection
-This project provided valuable insights into user behavior and the factors contributing to churn. One of the main challenges was handling the imbalanced dataset and ensuring that the model generalizes well.
+Reflection: This project provided valuable insights into user behavior and the factors contributing to churn. One of the main challenges was handling the imbalanced dataset and ensuring that the model generalizes well.
 
-Improvement 
-Future work could include:
+Improvement - Future work could include:
 
 Incorporating more advanced feature engineering.
 Exploring additional machine learning models such as Gradient Boosting Machines or Neural Networks.
