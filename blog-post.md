@@ -2,16 +2,20 @@ Predicting User Churn with Sparkify Data
 
 ![image](https://github.com/anhtran192/Data-Scientist-Capstone/assets/147739264/1aa3b742-46f8-4349-87fe-81491d999848)
 
-Project Overview
+**Project Overview**
+
 The Sparkify project is a comprehensive data science endeavor aimed at predicting user churn for a music streaming service. In this project, we leverage Spark to handle a substantial dataset and build a predictive model to identify users who are likely to cancel their subscription. The primary goal is to understand user behavior, define churn, engineer relevant features, and evaluate machine learning models to predict churn accurately.
 
-Problem Statement
+**Problem Statement**
+
 User churn is a critical issue for subscription-based businesses. Identifying users who are likely to churn allows companies to take proactive measures to retain them. This project aims to build a model that predicts whether a user will churn based on their interaction with the service.
 
-Metrics
+**Metrics**
+
 Given the imbalanced nature of churned versus non-churned users, we use the F1 score as our primary metric. The F1 score is a harmonic mean of precision and recall, providing a balance between false positives and false negatives.
 
-Data Exploration and Cleaning
+**Data Exploration and Cleaning**
+
 Load and Clean Dataset
 We start with a mini-dataset (mini_sparkify_event_data.json) and perform data cleaning to ensure its integrity. This involves:
 
@@ -22,7 +26,9 @@ We conduct an exploratory data analysis (EDA) to gain insights into user behavio
 
 Distribution of events such as song plays, likes, and skips.
 User activity patterns over time.
-Defining Churn
+
+**Defining Churn**
+
 Churn is defined based on the "Cancellation Confirmation" event. Users who trigger this event are labeled as churned. As an additional task, we consider "Downgrade" events to understand potential indicators of churn.
 
 Data Exploration Post-Churn Definition
@@ -37,7 +43,9 @@ Number of songs played.
 Frequency of different events (e.g., thumbs up, thumbs down, add to playlist).
 Session duration and number of sessions.
 Time since last session.
-Modeling
+
+**Modeling**
+
 Data Splitting
 The data is split into training, validation, and test sets to ensure robust model evaluation.
 
@@ -57,24 +65,16 @@ Hyperparameter Tuning: Optimized through tuning parameters like tree depth.
 Results
 The Decision Tree Classifier achieves the highest F1 score of 0.791, making it the most effective model for predicting churn in this dataset. The model's interpretability and ability to capture complex relationships contribute significantly to its performance.
 
-Conclusion
+**Conclusion**
+
 Reflection
 This project provided valuable insights into user behavior and the factors contributing to churn. One of the main challenges was handling the imbalanced dataset and ensuring that the model generalizes well.
 
-Improvement
+Improvement 
 Future work could include:
 
 Incorporating more advanced feature engineering.
 Exploring additional machine learning models such as Gradient Boosting Machines or Neural Networks.
 Using a larger dataset to improve model robustness.
 
-
-GitHub Repository
-The GitHub repository for this project contains all the code and documentation:
-
-README.md: Provides an overview of the project, libraries used, files, and a summary of results.
-Data Cleaning Script: Script for loading and cleaning the dataset.
-EDA Notebook: Jupyter notebook with exploratory data analysis.
-Feature Engineering Script: Script for engineering features.
-Modeling Notebook: Jupyter notebook with model evaluation and results.
 Link to GitHub Repository: https://github.com/anhtran192/Data-Scientist-Capstone
