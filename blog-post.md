@@ -10,18 +10,79 @@ Predicting User Churn with Sparkify Data
 
 The Sparkify project is a data science initiative aimed at predicting user churn for a music streaming service. In this project, we leverage the power of Apache Spark to handle a substantial dataset and develop a predictive model to identify users who are likely to cancel their subscription. The primary goal is to understand user behavior, define churn, engineer relevant features, and evaluate machine learning models to accurately predict churn.
 
-**Dataset Description**
+**Description of Input Data**
 
-The dataset used for this project is a subset of the full Sparkify dataset, containing user interactions with the music streaming service. It includes various features such as user demographics, session information, song data, and timestamps of user actions. The dataset is provided in JSON format and is loaded into a Spark DataFrame for analysis.
+The dataset for this project is a subset (128MB) of the full dataset (12GB) from Sparkify's user activity logs. It includes user interactions with the music streaming service, captured in JSON format. Key attributes in the dataset are:
 
-**Approach**
+  userId: Unique identifier for each user
+  
+  sessionId: Unique identifier for each session
+  
+  page: The type of user interaction (e.g., NextSong, Thumbs Up, Logout)
+  
+  song: The song name
+  
+  artist: The artist name
+  
+  ts: Timestamp of the event
+  
+  length: Length of the song played
+  
+  level: User subscription level (free or paid)
+  
+  gender: User's gender
+  
+  location: User's location
 
-**Data Loading and Cleaning** 
-We begin by loading the dataset into a Spark DataFrame and performing data cleaning to ensure its integrity. This involves identifying and handling missing or invalid data, such as records without user IDs or session IDs.
+These attributes are essential for understanding user behavior and building predictive models for churn.
+
+**Strategy for Solving the Problem**
+
+The approach involves the following steps:
+
+Data Loading and Cleaning: Load the dataset, identify and handle missing or invalid data. 
+
+Exploratory Data Analysis (EDA): Conduct EDA to gain insights into the data and identify patterns related to user churn.
+
+Feature Engineering: Create new features that capture user behavior and interactions with the service.
+
+Modeling: Train various machine learning models to predict churn.
+
+Evaluation: Evaluate model performance using appropriate metrics and select the best model.
+
+We employ Spark's powerful data processing capabilities to handle the large dataset efficiently and use machine learning libraries to build and evaluate models.
+
+**Discussion of the Expected Solution**
+
+The proposed solution involves using Spark to preprocess the data, engineer features, and train machine learning models. The workflow integrates:
+
+Data Preprocessing: Cleaning and transforming raw data into a structured format suitable for modeling. 
+
+Feature Engineering: Creating meaningful features from raw data to capture user behavior.
+
+Model Training: Using machine learning algorithms such as Logistic Regression, Decision Trees, and Random Forests to predict churn.
+
+Model Evaluation: Assessing models using metrics like F1 score to ensure robustness and reliability.
+
+Each component is designed to work seamlessly within the Spark framework, leveraging its distributed computing capabilities.
+
+**Metrics with Justification**
+
+The primary metric for evaluating model performance is the F1 score. This metric is chosen because it balances precision and recall, making it suitable for imbalanced datasets like churn prediction. Precision measures the proportion of true positive predictions, while recall measures the proportion of actual positives identified. The F1 score provides a single metric that accounts for both, offering a comprehensive assessment of model performance.
 
 **Exploratory Data Analysis (EDA)**
 
-Next, we conduct exploratory data analysis to gain insights into user behavior. We examine the distribution of various events, user activity patterns over time, and other key metrics to understand the dataset's characteristics.
+During EDA, we explore the distribution of user activities, analyze user demographics, and identify patterns associated with churn. Key findings include:
+
+User Activity: Patterns in song plays, session lengths, and interaction types. 
+
+Demographics: Distribution of user gender and location.
+
+Churn Indicators: High correlation between certain activities (e.g., "Cancellation Confirmation") and churn.
+
+Visualizations such as histograms, bar plots, and heatmaps help uncover these insights and guide feature engineering.
+
+Example of some visualizazions: 
 
 #### Distribution of User Genders
 
@@ -41,34 +102,64 @@ Next, we conduct exploratory data analysis to gain insights into user behavior. 
 
 *Description: This bar plot displays the top 10 most popular songs based on the number of plays.*
 
-**Defining Churn**
+**Data Preprocessing**
 
-Churn is defined based on the occurrence of the "Cancellation Confirmation" event, indicating users who have decided to cancel their subscription. Additionally, we consider "Downgrade" events as potential indicators of churn.
+Data preprocessing involves:
 
-**Feature Engineering**
+Handling Missing Values: Dropping records with missing userId or sessionId. 
 
-We identify and engineer several features that are indicative of user churn. These features include metrics such as the number of songs played, frequency of interactions with different features, session duration, and time since the last session.
+Data Transformation: Converting timestamps to human-readable formats and creating new features (e.g., hour of the day).
+
+Cleaning: Removing invalid entries and ensuring data consistency.
+
+This step ensures the dataset is clean, structured, and ready for feature engineering and modeling.
 
 **Modeling**
 
-The dataset is split into training, validation, and test sets. We evaluate several machine learning models, including Logistic Regression, Decision Tree Classifier, and Random Forest Classifier, using the F1 score as the primary metric. The model with the highest F1 score on the validation set is selected as the winning model.
+We employ several machine learning algorithms:
+
+Logistic Regression: A linear model for binary classification.
+
+Decision Tree Classifier: A non-linear model that splits data based on feature values.
+
+Random Forest Classifier: An ensemble method that combines multiple decision trees for better performance.
+
+Each model is trained on the preprocessed dataset and evaluated using the F1 score.
+
+**Hyperparameter Tuning**
+
+Hyperparameter tuning is performed using grid search and random search techniques. Key hyperparameters include:
+
+Learning Rate: For gradient-based models like Logistic Regression. 
+
+Tree Depth: For Decision Tree and Random Forest models.
+
+Number of Trees: For Random Forest.
+
+Tuning these hyperparameters optimizes model performance on the validation set.
+
+Results
+
+The evaluation results indicate that the Decision Tree Classifier outperforms other models with an F1 score of 0.79. The model captures complex relationships in the data and provides interpretable insights into churn prediction. Key performance metrics include precision, recall, and F1 score, with detailed visualizations for each model.
 
 #### Comparison of F1 Scores
 
-*Description: This bar plot compares the F1 scores of different models on the validation set.*
-
-**Results**
-
 ![F1 score_result](https://github.com/anhtran192/Data-Scientist-Capstone/assets/147739264/80082cea-1226-425f-b5d0-94abdddbfc30)
-
-The Decision Tree Classifier emerged as the best-performing model, achieving the highest F1 score among the evaluated models. This performance can be attributed to its ability to capture complex relationships, interpretability, effective feature selection, and optimized hyperparameters.
 
 **Conclusion**
 
-The Sparkify project demonstrates the effectiveness of using Apache Spark for analyzing large datasets and building predictive models for user churn prediction. By understanding user behavior and leveraging machine learning techniques, companies can proactively identify users at risk of churn and implement strategies to retain them.
+The Decision Tree Classifier is the best-performing model for predicting user churn in the Sparkify dataset. It effectively captures user behavior patterns and provides actionable insights. The project demonstrates the power of combining Spark with machine learning to handle large-scale data and build robust predictive models.
 
 **Future Work**
 
-Future work could include further refining the feature engineering process, experimenting with ensemble methods, exploring advanced machine learning techniques, and deploying the predictive model in a real-world environment. Additionally, continuous monitoring and optimization of the model would be essential to maintain its accuracy and relevance over time.
+Future improvements could include:
+
+Feature Enrichment: Incorporating additional features such as user engagement metrics and social interactions. 
+
+Model Ensembles: Combining multiple models to improve prediction accuracy.
+
+Scalability: Optimizing the pipeline for scalability and real-time predictions.
+
+These enhancements can further improve the model's performance and applicability.
 
 Link to GitHub Repository: https://github.com/anhtran192/Data-Scientist-Capstone
