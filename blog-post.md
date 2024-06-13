@@ -1,9 +1,8 @@
-Predicting User Churn with Sparkify Data
+**Predicting User Churn with Sparkify Data**
 
 ![image](https://github.com/anhtran192/Data-Scientist-Capstone/assets/147739264/1aa3b742-46f8-4349-87fe-81491d999848)
 
 
-Predicting User Churn with Sparkify Data
 
 
 **Introduction**
