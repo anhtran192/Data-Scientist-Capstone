@@ -2,7 +2,7 @@
 
 This workspace contains a subset of the Sparkify dataset, a fictional music streaming service. Here, we will explore user behavior and predict churn using Apache Spark.
 
-Project Overview
+**Project Overview**
 
 The goal of this project is to analyze user behavior and predict churn using machine learning techniques. Churn prediction is essential for subscription-based services like Sparkify, as it helps in retaining customers and improving user experience.
 
@@ -20,7 +20,7 @@ Feature Engineering: Extract relevant features from the dataset to train our pre
 
 Modeling: Split the dataset into train, test, and validation sets. Test various machine learning methods, evaluate model performance, and optimize based on metrics such as F1 score.
 
-Files in the Repository
+**Files in the Repository**
 
 mini_sparkify_event_data.json: The dataset containing user interactions with the Sparkify platform.
 
@@ -30,7 +30,7 @@ README.md: This file, providing an overview of the project and instructions for 
 
 blog-post.md: This file, providing how we can leverage the Sparkify dataset to analyze user behavior and predict churn using Apache Spark.
 
-Libraries Used
+**Libraries Used**
 
 pyspark
 
@@ -52,11 +52,11 @@ Follow the instructions provided in the notebook cells to execute each step of t
 
 Ensure all dependencies are installed (Apache Spark, PySpark, etc.) to run the code successfully.
 
-Conclusion
+**Conclusion**
 
 By analyzing user behavior and predicting churn, this project aims to provide valuable insights for businesses like Sparkify. Through data-driven decision-making, companies can optimize user retention strategies and enhance overall customer experience.
 
-Acknowledgements
+**Acknowledgements**
 
 We would like to thank:
 
