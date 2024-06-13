@@ -137,7 +137,7 @@ Number of Trees: For Random Forest.
 
 Tuning these hyperparameters optimizes model performance on the validation set.
 
-Results
+**Results**
 
 The evaluation results indicate that the Decision Tree Classifier outperforms other models with an F1 score of 0.79. The model captures complex relationships in the data and provides interpretable insights into churn prediction. Key performance metrics include precision, recall, and F1 score, with detailed visualizations for each model.
 
@@ -145,9 +145,43 @@ The evaluation results indicate that the Decision Tree Classifier outperforms ot
 
 ![F1 score_result](https://github.com/anhtran192/Data-Scientist-Capstone/assets/147739264/80082cea-1226-425f-b5d0-94abdddbfc30)
 
+**Explanation of Model Performance**
+
+Logistic Regression: This model assumes a linear relationship between the features and the target variable. While it provides a baseline, it may not capture the non-linear patterns in user behavior effectively, leading to lower performance compared to more complex models.
+
+Decision Tree Classifier: This model can capture non-linear relationships by splitting the data based on feature values. It inherently performs feature selection, which helps in identifying the most informative features. The ability to handle non-linearity and perform feature selection contributes to its superior performance.
+
+Random Forest Classifier: This ensemble method improves robustness by combining multiple decision trees. However, in this case, the Random Forest did not significantly outperform the single Decision Tree, possibly due to the complexity and overfitting of the trees. Hyperparameter tuning was critical, but the Decision Tree's simplicity proved advantageous.
+
+**Evaluation of the Final Model**
+
+The final model, the Decision Tree Classifier, was evaluated in detail. Key qualities and parameters included:
+
+Tree Depth: Optimal depth was determined through hyperparameter tuning. A deeper tree captures more complexity but risks overfitting.
+
+Splitting Criteria: Gini impurity was used to measure the quality of splits, ensuring balanced and informative partitions.
+
+Feature Importance: The model inherently ranks features by their importance, providing insights into which user behaviors are most indicative of churn.
+
 **Conclusion**
 
 The Decision Tree Classifier is the best-performing model for predicting user churn in the Sparkify dataset. It effectively captures user behavior patterns and provides actionable insights. The project demonstrates the power of combining Spark with machine learning to handle large-scale data and build robust predictive models.
+
+**Reflection**
+
+Key Findings and Insights
+
+Feature Engineering: Developing meaningful features was crucial for model performance. Features like session length and song count were significant indicators of user engagement and churn.
+
+Model Performance: The Decision Tree Classifier performed best, likely due to its ability to capture complex relationships in the data and its inherent feature selection capability.
+
+Interesting Aspects and Challenges
+
+Handling Imbalanced Data: Managing the imbalance between churned and non-churned users was challenging. Using the F1 score helped balance precision and recall, providing a more accurate assessment of model performance.
+
+Hyperparameter Tuning: Finding the optimal hyperparameters for each model required extensive experimentation. This process was critical for enhancing model performance but was time-consuming and computationally intensive.
+
+Summary: The project successfully demonstrated a comprehensive approach to predicting user churn using machine learning with Apache Spark. The insights gained can help Sparkify implement strategies to retain users, thereby improving customer satisfaction and business outcomes. Future improvements could involve enriching features, exploring ensemble models, and optimizing for real-time predictions.
 
 **Future Work**
 
