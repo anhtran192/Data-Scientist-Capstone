@@ -30,6 +30,20 @@ README.md: This file, providing an overview of the project and instructions for 
 
 blog-post.md: This file, providing how we can leverage the Sparkify dataset to analyze user behavior and predict churn using Apache Spark.
 
+Libraries Used
+
+pyspark
+
+pandas
+
+numpy
+
+matplotlib
+
+seaborn
+
+scikit-learn
+
 To run the code in Sparkify.ipynb, you need to set up a Spark cluster environment. If you're using this workspace, Spark is already configured.
 
 Open Sparkify.ipynb in Jupyter Notebook.
@@ -41,3 +55,13 @@ Ensure all dependencies are installed (Apache Spark, PySpark, etc.) to run the c
 Conclusion
 
 By analyzing user behavior and predicting churn, this project aims to provide valuable insights for businesses like Sparkify. Through data-driven decision-making, companies can optimize user retention strategies and enhance overall customer experience.
+
+Acknowledgements
+
+We would like to thank:
+
+Udacity for providing the project framework.
+
+The Sparkify dataset providers.
+
+All the open-source library maintainers and contributors.
